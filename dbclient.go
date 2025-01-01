@@ -19,5 +19,5 @@ type DBClient interface {
 	TruncateTable(ctx context.Context, logger Logger, schemaName string, tableName string) error
 	GetTableDetail(ctx context.Context, logger Logger, taskConfig TaskObjectTable) (TableDetail, error)
 	GenerateTableDetail(ctx context.Context, logger Logger, tableDetail TableDetail) (TableDetail, error)
-	GenerateTableSql(ctx context.Context, logger Logger, taskConfig TaskObjectTable, tableDetail TableDetail) ([]string, error)
+	GenerateTableSql(ctx context.Context, logger Logger, taskConfig TaskObjectTable, tableDetail TableDetail) ([]string, []string, error)
 }

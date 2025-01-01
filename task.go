@@ -49,6 +49,8 @@ type TaskObjectTableResult struct {
 	TableIndexes     []TableIndex
 	TableColumns     []TableColumn
 	TablePrimaryKeys []string
+	SuccessSqls      []string
+	FailedSqls       []string
 	Error            error
 	Status           JobStatus
 }
