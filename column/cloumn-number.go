@@ -1,4 +1,4 @@
-package datatunnelcommon
+package column
 
 // 范围是 -128 到 127（有符号）或 0 到 255（无符号），占用 1 字节。
 type TinyintType struct {
