@@ -8,6 +8,7 @@ const (
 	JobStatusFinished JobStatus = 3
 	JobStatusFailed   JobStatus = 4
 	JobStatusStopped  JobStatus = 5
+	JobStatusSkipped  JobStatus = 6
 )
 
 type JobVerifyStatus uint8
@@ -18,6 +19,7 @@ const (
 	VerifyStatusConsistent   JobVerifyStatus = 3
 	VerifyStatusInconsistent JobVerifyStatus = 4
 	VerifyStatusFailed       JobVerifyStatus = 5
+	VerifyStatusSkipped      JobVerifyStatus = 6
 )
 
 type JobSection uint8
