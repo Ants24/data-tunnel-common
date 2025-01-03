@@ -7,7 +7,7 @@ import (
 
 type DBClient interface {
 	GetTableNames(logger Logger, schema string) ([]string, error)
-	GetSchemaNames(logger Logger) ([]string, error)
+	GetSchemaNames(logger Logger, databaseName string) ([]string, error)
 	ConventTableAndColumnName(name string, fromDBType DBType) string
 	GetTableColumnNames(ctx context.Context, schema string, tableName string, columnNames []string, fromDBType DBType) ([]string, []string, error)
 	ReadData(ctx context.Context, logger Logger, taskConfig TaskFullTable, columnNames []string, columnTypes []string, channel chan []sql.NullString) (uint64, error)

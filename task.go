@@ -75,6 +75,7 @@ type TaskObjectTable struct {
 	DestTable    string
 	Config       TableObjectConfig
 }
+
 type TaskObjectTableResult struct {
 	JobId            uint
 	TableId          uint
@@ -88,6 +89,7 @@ type TaskObjectTableResult struct {
 	Error            error
 	Status           JobStatus
 }
+
 type TaskVerifyTable struct {
 	TableId      uint
 	JobId        uint
