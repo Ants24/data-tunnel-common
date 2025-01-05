@@ -27,6 +27,13 @@ type TableBase struct {
 	Filter     string
 }
 
+type TaskTableBase struct {
+	TableId         uint
+	JobId           uint
+	SourceTableInfo TableBase
+	DestTableInfo   TableBase
+}
+
 type TableDetail struct {
 	TableId     uint
 	FromDBType  DBType
@@ -37,14 +44,8 @@ type TableDetail struct {
 }
 
 type TaskFullTable struct {
-	TableId      uint
-	JobId        uint
-	SourceSchema string
-	SourceTable  string
-	DestSchema   string
-	DestTable    string
-	Filter       string
-	Config       TableFullConfig
+	TaskTableBase
+	Config TableFullConfig
 	// 一下做切片的配置
 	SplitId       int
 	SplitColumn   string
@@ -67,13 +68,8 @@ type TaskFullTableResult struct {
 }
 
 type TaskObjectTable struct {
-	TableId      uint
-	JobId        uint
-	SourceSchema string
-	SourceTable  string
-	DestSchema   string
-	DestTable    string
-	Config       TableObjectConfig
+	TaskTableBase
+	Config TableObjectConfig
 }
 
 type TaskObjectTableResult struct {
@@ -91,14 +87,8 @@ type TaskObjectTableResult struct {
 }
 
 type TaskVerifyTable struct {
-	TableId      uint
-	JobId        uint
-	SourceSchema string
-	SourceTable  string
-	DestSchema   string
-	DestTable    string
-	Filter       string
-	Config       TableVerifyConfig
+	TaskTableBase
+	Config TableVerifyConfig
 }
 
 type TaskVerifyTableResult struct {
